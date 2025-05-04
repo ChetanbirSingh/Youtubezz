@@ -1,6 +1,7 @@
 import he from "he";
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
 import { YouTubeCommentList } from "@/app/comments";
+import LikeButton from "./LikeButton";
 
 export default function Comments({ comments }: {comments: YouTubeCommentList}) {
   return (
@@ -25,13 +26,7 @@ export default function Comments({ comments }: {comments: YouTubeCommentList}) {
                 {he.decode(c.text.replace(/<[^>]+>/g, ""))}
               </p>
               <div className="mt-2 flex items-center gap-2 text-sm text-gray-400">
-                <svg
-                  className="w-4 h-4 fill-current text-gray-400"
-                  viewBox="0 0 24 24"
-                >
-                  <path d="M14 9V5a3 3 0 0 0-6 0v4H5v12h14V9h-5z" />
-                </svg>
-                <span>{c.likeCount}</span>
+                <LikeButton initialLikes={c.likeCount}/>
               </div>
             </div>
           </div>
