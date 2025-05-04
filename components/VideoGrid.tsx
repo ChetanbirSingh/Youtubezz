@@ -2,6 +2,7 @@ import Link from "next/link";
 import Image from "next/image";
 import { getVideoData } from "@/app/videosData";
 import { videos } from "@/app/videos";
+import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
 
 export default async function VideoGrid() {
   const videoData = await Promise.all(
@@ -24,7 +25,11 @@ export default async function VideoGrid() {
             </div>
 
             <div className="flex items-center gap-3 mt-3">
-              <div className="w-9 h-9 rounded-full bg-[#555] shrink-0 overflow-hidden"></div>
+              <Avatar>
+                <AvatarImage src={video.channelImage} alt={video.channel} />
+                <AvatarFallback>{video.channel}</AvatarFallback>
+              </Avatar>
+
               <div>
                 <h3 className="text-sm font-medium leading-tight line-clamp-2">
                   {video.title}
