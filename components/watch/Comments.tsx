@@ -12,7 +12,7 @@ export default function Comments({ comments }: {comments: YouTubeCommentList}) {
           <div key={idx} className="flex items-start gap-4">
             <Avatar>
               <AvatarImage src={c.authorImg} alt={c.author} />
-              <AvatarFallback>CN</AvatarFallback>
+              <AvatarFallback>{c.author.charAt(1)}</AvatarFallback>
             </Avatar>
 
             <div className="flex-1 bg-[#1a1a1a] p-3 rounded-lg">
