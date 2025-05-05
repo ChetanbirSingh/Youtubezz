@@ -2,10 +2,17 @@ import he from "he";
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
 import { YouTubeCommentList } from "@/app/comments";
 import LikeButton from "./LikeButton";
+import CommentsSummarizer from "./CommentsSummarizer";
 
-export default function Comments({ comments }: {comments: YouTubeCommentList}) {
+export default function Comments({
+  comments,
+}: {
+  comments: YouTubeCommentList;
+}) {
   return (
     <section className="mt-8">
+      <CommentsSummarizer comments={comments} />
+
       <h3 className="text-lg font-semibold mb-5">Top Comments</h3>
       <div className="space-y-6">
         {comments.map((c, idx: number) => (
@@ -26,7 +33,7 @@ export default function Comments({ comments }: {comments: YouTubeCommentList}) {
                 {he.decode(c.text.replace(/<[^>]+>/g, ""))}
               </p>
               <div className="mt-2 flex items-center gap-2 text-sm text-gray-400">
-                <LikeButton initialLikes={c.likeCount}/>
+                <LikeButton initialLikes={c.likeCount} />
               </div>
             </div>
           </div>
