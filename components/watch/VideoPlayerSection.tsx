@@ -52,8 +52,8 @@ export default function VideoPlayerSection({
         </div>
       </div>
 
-      <details className="bg-[#1c1c1c] p-3 rounded mb-6">
-        <summary className="cursor-pointer font-medium text-sm text-gray-300">
+      <details className="bg-[#1c1c1c] p-3 rounded mb-6 group">
+        <summary className="cursor-pointer font-medium text-sm text-gray-300 list-none [&::-webkit-details-marker]:hidden">
           {video.views} views • {video.timeAgo}
           <p className="text-sm text-gray-300 mt-1 line-clamp-3">
             {video.description}
