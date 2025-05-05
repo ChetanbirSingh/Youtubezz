@@ -1,17 +1,27 @@
-import { FaYoutube } from "react-icons/fa";
 import { FiSearch, FiBell } from "react-icons/fi";
 import { IoMicOutline } from "react-icons/io5";
 import { BiVideoPlus } from "react-icons/bi";
-
+import Image from "next/image";
+import Link from "next/link";
 export default function Header() {
   return (
     <header className="sticky top-0 z-50 flex items-center justify-between px-4 py-2 bg-[#0f0f0f]">
-      <div className="flex items-center gap-2">
-        <FaYoutube size={28} className="text-red-600" />
-        <span className="font-bold text-xl tracking-tight hidden sm:inline">
-          YouTube
-        </span>
-      </div>
+      <Link href="/">
+        <div className="flex items-center gap-2">
+          <div className="relative w-8 h-8">
+            <Image
+              src="/logo.webp"
+              alt="Logo"
+              fill
+              sizes="32px"
+              className="object-contain"
+            />
+          </div>
+          <span className="font-bold text-xl tracking-tight hidden sm:inline">
+            YouTube
+          </span>
+        </div>
+      </Link>
 
       <div className="flex-1 flex justify-center">
         <div className="hidden sm:flex w-full max-w-[600px] items-center">
