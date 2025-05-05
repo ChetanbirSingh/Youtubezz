@@ -8,7 +8,7 @@ import VideoPlayerSection from "@/components/watch/VideoPlayerSection";
 export async function generateMetadata({ params }: WatchPageProps) {
   const video = await getVideoData((await params).id);
   return {
-    title: `${video.title} | YouTubezz`,
+    title: `${video.title} | YouTube`,
     description: `Watch and explore insights for ${video.title}`,
   };
 }
