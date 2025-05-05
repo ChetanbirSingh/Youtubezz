@@ -3,6 +3,7 @@ import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
 import { VideoInterface } from "@/lib/videosData";
 import LikeButton from "./LikeButton";
 import ThumbnailAnalyzer from "./ThumbnailAnalyzer";
+import ReminderNotification from "./Reminder";
 export default function VideoPlayerSection({
   video,
 }: {
@@ -10,7 +11,7 @@ export default function VideoPlayerSection({
 }) {
   return (
     <>
-      <div className="aspect-video w-full bg-black mb-4">
+      <div className="aspect-video w-full mb-4">
         <iframe
           className="w-full h-full rounded-xl"
           src={`https://www.youtube.com/embed/${video.id}`}
@@ -49,6 +50,7 @@ export default function VideoPlayerSection({
           <div className="flex items-center gap-1 bg-[#222] px-3 py-1 rounded-full">
             <BiDownload /> Download
           </div>
+          <ReminderNotification videoTitle={video.title}/>
         </div>
       </div>
 
