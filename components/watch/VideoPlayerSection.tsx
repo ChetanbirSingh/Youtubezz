@@ -1,6 +1,6 @@
 import { BiDislike, BiDownload, BiShare } from "react-icons/bi";
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
-import { VideoInterface } from "@/app/videosData";
+import { VideoInterface } from "@/lib/videosData";
 import LikeButton from "./LikeButton";
 import ThumbnailAnalyzer from "./ThumbnailAnalyzer";
 export default function VideoPlayerSection({

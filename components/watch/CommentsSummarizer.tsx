@@ -1,7 +1,7 @@
 "use client";
 
 import { useEffect, useState } from "react";
-import { YouTubeCommentList } from "@/app/comments";
+import { YouTubeCommentList } from "@/lib/comments";
 
 export default function CommentsSummarizer({
   comments,

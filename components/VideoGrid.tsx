@@ -1,7 +1,7 @@
 import Link from "next/link";
 import Image from "next/image";
-import { getVideoData } from "@/app/videosData";
-import { videos } from "@/app/videos";
+import { getVideoData } from "@/lib/videosData";
+import { videos } from "@/lib/videos";
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
 
 export default async function VideoGrid() {

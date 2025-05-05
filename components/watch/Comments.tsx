@@ -1,6 +1,6 @@
 import he from "he";
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
-import { YouTubeCommentList } from "@/app/comments";
+import { YouTubeCommentList } from "@/lib/comments";
 import LikeButton from "./LikeButton";
 import CommentsSummarizer from "./CommentsSummarizer";
 

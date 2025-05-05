@@ -1,6 +1,6 @@
 import Link from "next/link";
 import Image from "next/image";
-import { VideoInterface } from "@/app/videosData";
+import { VideoInterface } from "@/lib/videosData";
 
 export default function VideoRecommendations({
   otherVideos,

@@ -1,6 +1,6 @@
-import { getVideoData } from "@/app/videosData";
-import { videos } from "@/app/videos";
-import { getVideoComments } from "@/app/comments";
+import { getVideoData } from "@/lib/videosData";
+import { videos } from "@/lib/videos";
+import { getVideoComments } from "@/lib/comments";
 import VideoRecommendations from "@/components/watch/VideoRecommendations";
 import Comments from "@/components/watch/Comments";
 import VideoPlayerSection from "@/components/watch/VideoPlayerSection";
