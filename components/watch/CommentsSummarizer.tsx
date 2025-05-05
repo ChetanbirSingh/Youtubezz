@@ -60,7 +60,7 @@ export default function CommentsSummarizer({
   }, [comments]);
 
   return (
-    <div className="mt-6 bg-[#1e1e1e] border border-[#333] rounded-xl p-4">
+    <div className="mt-6 bg-[#1e1e1e] border border-[#333] rounded-xl p-4 mb-4">
       <h2 className="text-sm text-gray-400 mb-2">
         Summary of YouTube Comments:
       </h2>

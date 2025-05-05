@@ -5,7 +5,7 @@ import Image from "next/image";
 import Link from "next/link";
 export default function Header() {
   return (
-    <header className="sticky top-0 z-50 flex items-center justify-between px-4 py-2 bg-[#0f0f0f]">
+    <header className="sticky w-full top-0 z-50 flex items-center justify-between px-4 py-2 bg-[#0f0f0f]">
       <Link href="/">
         <div className="flex items-center gap-2">
           <div className="relative w-8 h-8">
