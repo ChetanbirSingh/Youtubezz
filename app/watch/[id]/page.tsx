@@ -5,6 +5,14 @@ import VideoRecommendations from "@/components/watch/VideoRecommendations";
 import Comments from "@/components/watch/Comments";
 import VideoPlayerSection from "@/components/watch/VideoPlayerSection";
 
+export async function generateMetadata({ params }: WatchPageProps) {
+  const video = await getVideoData(params.id);
+  return {
+    title: `${video.title} | YouTubezz`,
+    description: `Watch and explore insights for ${video.title}`,
+  };
+}
+
 export async function generateStaticParams(): Promise<{ id: string }[]> {
   return videos.map((v) => ({ id: v.id }));
 }
