@@ -6,7 +6,7 @@ import Comments from "@/components/watch/Comments";
 import VideoPlayerSection from "@/components/watch/VideoPlayerSection";
 
 export async function generateMetadata({ params }: WatchPageProps) {
-  const video = await getVideoData(params.id);
+  const video = await getVideoData((await params).id);
   return {
     title: `${video.title} | YouTubezz`,
     description: `Watch and explore insights for ${video.title}`,
@@ -18,17 +18,15 @@ export async function generateStaticParams(): Promise<{ id: string }[]> {
 }
 
 type WatchPageProps = {
-  params: {
-    id: string;
-  };
+  params: Promise<{ id: string }>;
 };
 
 export default async function WatchPage({ params }: WatchPageProps) {
-  const video = await getVideoData(params.id);
+  const video = await getVideoData((await params).id);
   const otherVideos = await Promise.all(
-    videos.filter((v) => v.id !== params.id).map((v) => getVideoData(v.id))
+    videos.filter(async (v) => v.id !== (await params).id).map((v) => getVideoData(v.id))
   );
-  const comments = await getVideoComments(params.id);
+  const comments = await getVideoComments((await params).id);
 
   return (
     <main className="p-4 text-white bg-[#0f0f0f]">
