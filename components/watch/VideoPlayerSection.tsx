@@ -2,6 +2,7 @@ import { BiDislike, BiDownload, BiShare } from "react-icons/bi";
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
 import { VideoInterface } from "@/app/videosData";
 import LikeButton from "./LikeButton";
+import ThumbnailAnalyzer from "./ThumbnailAnalyzer";
 export default function VideoPlayerSection({
   video,
 }: {
@@ -16,6 +17,7 @@ export default function VideoPlayerSection({
           title={video.title}
           allowFullScreen
         />
+        <ThumbnailAnalyzer videoId={video.id} />
       </div>
 
       <h1 className="text-lg md:text-xl font-semibold mb-2 leading-snug">
