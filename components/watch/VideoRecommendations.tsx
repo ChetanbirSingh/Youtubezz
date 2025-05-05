@@ -15,14 +15,21 @@ export default function VideoRecommendations({
           <Link href={`/watch/${v.id}`}>
             <div className="flex gap-3 cursor-pointer group">
               <div className="relative w-40 aspect-video rounded overflow-hidden">
-                <Image
-                  src={v.thumbnail}
-                  alt={v.title}
-                  fill
-                  className="object-cover"
-                  sizes="160px"
-                  priority
-                />
+              <Image
+                src={v.thumbnail}
+                alt={v.title}
+                fill
+                className="object-cover transition-opacity duration-200 ease-in-out group-hover:opacity-0"
+                sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 25vw"
+                priority
+              />
+
+              <iframe
+                className="w-full h-full "
+                src={`https://www.youtube.com/embed/${v.id}?autoplay=1&mute=1&controls=0&loop=1&playlist=${v.id}`}
+                title={v.title}
+                allow="autoplay"
+              />
               </div>
               <div className="flex-1">
                 <h3 className="text-sm font-semibold line-clamp-2">
